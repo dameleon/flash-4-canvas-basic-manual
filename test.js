@@ -9,7 +9,8 @@ lib.properties = {
 	fps: 24,
 	color: "#FFFFFF",
 	manifest: [
-		{src:"images/bitmap_1.png", id:"bitmap_1"}
+		{src:"images/bitmap_1.png", id:"bitmap_1"},
+		{src:"images/ビットマップ1.png", id:"ビットマップ1"}
 	]
 };
 
@@ -31,6 +32,8 @@ lib.properties = {
 
 	this.instance_1 = new lib.graphic_1("synched",0);
 	this.instance_1.setTransform(310,553);
+	this.instance_1.filters = [new cjs.ColorFilter(0, 0, 0, 1, 0, 255, 0, 0)];
+	this.instance_1.cache(-92,-42,184,84);
 
 	this.instance_2 = new lib.button_1();
 	this.instance_2.setTransform(310,350);
@@ -42,7 +45,7 @@ lib.properties = {
 	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.instance_3},{t:this.instance_2},{t:this.instance_1},{t:this.instance}]}).wait(1));
 
 }).prototype = p = new cjs.MovieClip();
-p.nominalBounds = new cjs.Rectangle(340.1,441,414.1,767);
+p.nominalBounds = new cjs.Rectangle(340.1,441,720,767);
 
 
 // symbols:
@@ -52,18 +55,22 @@ p.nominalBounds = new cjs.Rectangle(340.1,441,414.1,767);
 p.nominalBounds = new cjs.Rectangle(0,0,180,80);
 
 
-(lib.movieclip_1 = function(mode,startPosition,loop) {
-	this.initialize(mode,startPosition,loop,{});
+(lib.ビットマップ1 = function() {
+	this.initialize(img.ビットマップ1);
+}).prototype = p = new cjs.Bitmap();
+p.nominalBounds = new cjs.Rectangle(0,0,230,370);
+
+
+(lib.movieclip_1 = function() {
+	this.initialize();
 
 	// レイヤー 1
 	this.shape = new cjs.Shape();
 	this.shape.graphics.f("#33CC00").s().p("AuDGPIAAsdIcHAAIAAMdg");
-	this.shape._off = true;
 
-	this.timeline.addTween(cjs.Tween.get(this.shape).wait(1).to({_off:false},0).wait(1));
-
-}).prototype = p = new cjs.MovieClip();
-p.nominalBounds = null;
+	this.addChild(this.shape);
+}).prototype = p = new cjs.Container();
+p.nominalBounds = new cjs.Rectangle(-90,-40,180,80);
 
 
 (lib.graphic_1 = function() {
